@@ -1,4 +1,4 @@
-#!/bin/use/python3
+#!/bin/usr/python3
 """ class to define square"""
 
 
@@ -20,4 +20,5 @@ class Square:
 
         except Exception as e:
             raise e
+
 
