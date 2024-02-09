@@ -1,3 +1,3 @@
 -- a script that deletes a database
 
-DROP hbtn_0c_0
+DROP DATABASE hbtn_0c_0
