@@ -25,3 +25,7 @@ True
 0
 >>> add_integer(True, True)
 2
+>>> isinstance(add_integer("str", "str"), (int, float))
+Traceback (most recent call last):
+... 
+TypeError: a must be an integer
