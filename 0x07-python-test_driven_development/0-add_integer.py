@@ -25,9 +25,3 @@ def add_integer(a, b=98):
 
     sum = a + b
     return sum
-
-try:
-    total = add_integer(5.4342,5.5)
-    print(total)
-except TypeError as te:
-    print(te)
