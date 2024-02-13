@@ -1,0 +1,14 @@
+# test_module03.txt
+
+"""
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(5, 5)
+10
+>>> add_integer(-1,-1)
+-2
+>>> add_integer(-7,+7)
+0
+>>> isinstance(add_integer(5, 5.5), (int, float))
+True
+
+"""
