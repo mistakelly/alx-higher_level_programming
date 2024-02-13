@@ -29,3 +29,8 @@ True
 Traceback (most recent call last):
 ... 
 TypeError: a must be an integer
+>>> isinstance(add_integer(5, "str"), (int, float))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
