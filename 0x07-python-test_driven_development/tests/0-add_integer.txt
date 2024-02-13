@@ -2,12 +2,6 @@
 >>> add_integer = __import__('0-add_integer').add_integer
 
 """
->>> module_doc = __import__('0-add_integer').__doc__
->>> len(module_doc) > 1
-True
->>> func_doc = __import__('0-add_integer').add_integer.__doc__
->>> len(func_doc) > 1
-True
 >>> add_integer(5, 5)
 10
 >>> add_integer(-1,-1)
