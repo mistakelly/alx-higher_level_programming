@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """a script that adds two integers
-and returns the output, exeception is raised when
-when a the user passes a non int/float value.
+
 """
 
 
