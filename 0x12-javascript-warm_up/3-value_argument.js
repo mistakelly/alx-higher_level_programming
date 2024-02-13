@@ -1,2 +1,7 @@
 #!/usr/bin/node
-console.log(typeof process.argv[2] === 'undefined' ? 'No argument' : process.argv[2]);
+const array = process.argv.slice(2);
+if (array[0] === undefined) {
+  console.log('No argument');
+} else {
+  console.log(array[0]);
+}
