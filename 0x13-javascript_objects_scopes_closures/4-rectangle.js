@@ -41,23 +41,4 @@ class Rectangle {
   }
 }
 
-// module.exports = Rectangle;
-// r1 = new Rectangle(4,2)
-// console.log(r1)
-// r1.rotate()
-// console.log(r1)
-// r1.double()
-// console.log(r1)
-// r1.print()
-
-const r1 = new Rectangle(2, 3);
-console.log('Normal:');
-r1.print();
-
-console.log('Double:');
-r1.double();
-r1.print();
-
-console.log('Rotate:');
-r1.rotate();
-r1.print();
+module.exports = Rectangle;
