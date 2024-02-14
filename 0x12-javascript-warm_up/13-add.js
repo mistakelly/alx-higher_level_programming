@@ -6,6 +6,8 @@ The name of the function must be add
 You are not allowed to use var
 */
 
-add = function (num1, num2) {
+function add (num1, num2) {
   return num1 + num2;
 }
+
+module.exports = { add };
