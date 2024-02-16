@@ -12,4 +12,6 @@ we are going to use sqlalchemy module in python for the project
 
 General:
 
-
+How to connect to a mysql database from python script.
+how to select rows in a mysql table from python script
+how to insert rows in a mysql table from python script
