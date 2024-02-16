@@ -15,3 +15,4 @@ General:
 How to connect to a mysql database from python script.
 how to select rows in a mysql table from python script
 how to insert rows in a mysql table from python script
+
