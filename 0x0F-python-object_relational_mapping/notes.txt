@@ -1,0 +1,6 @@
+PYTHON OBJECT RELATIONAL MAPPING.
+
+WHAT IS PYTHON ORM ??
+
+ORM is simply a programming technique used to interact with out database in an object oriented mapper.
+
