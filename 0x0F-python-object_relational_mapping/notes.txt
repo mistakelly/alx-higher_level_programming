@@ -10,3 +10,4 @@ OBJECT relational mapper is a codeLibrary that automates the transfer of RELATIO
 
 we are going to use sqlalchemy module in python for the project
 
+to install 
