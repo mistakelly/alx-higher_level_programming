@@ -8,3 +8,4 @@ what is ORM MAPPER ??
 
 OBJECT relational mapper is a codeLibrary that automates the transfer of RELATIONAL database table into object for application code.
 
+we are going to use sqlalchemy module in python for the project
