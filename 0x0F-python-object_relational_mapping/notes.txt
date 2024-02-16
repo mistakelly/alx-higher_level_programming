@@ -15,4 +15,6 @@ General:
 How to connect to a mysql database from python script.
 how to select rows in a mysql table from python script
 how to insert rows in a mysql table from python script
-
+what does orm means
+how to map a python class to a mysql table
+how to creat e python virtual envirio
