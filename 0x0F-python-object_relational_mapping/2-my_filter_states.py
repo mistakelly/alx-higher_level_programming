@@ -31,7 +31,7 @@ if __name__ == '__main__':
         port=3306
     )
 
-    command = f'SELECT * FROM states WHERE name=%s'
+    command = f'SELECT * FROM states WHERE name=%s ORDER BY states.id'
 
     # create cursor
     cursor = mydb.cursor()
