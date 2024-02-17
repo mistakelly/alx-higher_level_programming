@@ -11,11 +11,9 @@ Results must be displayed as they are in the example below
 Your code should not be executed when imported
 """
 # set connection
+
 import MySQLdb as mysql
 import sys
-
-
-
 if __name__ == '__main__':
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
@@ -33,8 +31,7 @@ if __name__ == '__main__':
     cursor.execute("""
         SELECT *
         FROM states
-        WHERE name LIKE 'N%'
-        ORDER BY states.id
+        WHERE name LIKE BINARY 'N%'
     """)
 
     rows = cursor.fetchall()
