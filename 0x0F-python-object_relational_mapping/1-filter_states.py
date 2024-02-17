@@ -10,8 +10,6 @@ Results must be sorted in ascending order by states.id
 Results must be displayed as they are in the example below
 Your code should not be executed when imported
 """
-# __import__('0-select_states')
-
 # set connection
 import MySQLdb as mysql
 import sys
