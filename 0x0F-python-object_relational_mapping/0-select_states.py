@@ -10,20 +10,29 @@ Results must be displayed as they are in the example below
 code should not be executed when imported
 """
 import MySQLdb as mysql
+import sys
+
+username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
+
 mydb = mysql.connect(
     host='localhost',
-    user='root',
-    password='31006569',
-    db='hbtn_0e_0_usa'
+    user=username,
+    passwd=password,
+    db=database,
+    port=3306
 )
 
 # create cursor
 cursor = mydb.cursor()
 
-cursor.execute('SELECT * FROM states')
+cursor.execute('SELECT * FROM states ORDER BY id')
 
 rows = cursor.fetchall()
 
 if __name__ == '__main__':
     for row in rows:
         print(row)
+
+# close connections
+cursor.close()
+mydb.close()
