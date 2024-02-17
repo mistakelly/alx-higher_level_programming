@@ -11,28 +11,26 @@ code should not be executed when imported
 """
 import MySQLdb as mysql
 import sys
-
-username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
-
-mydb = mysql.connect(
-    host='localhost',
-    user=username,
-    passwd=password,
-    db=database,
-    port=3306
-)
-
-# create cursor
-cursor = mydb.cursor()
-
-cursor.execute('SELECT * FROM states ORDER BY id')
-
-rows = cursor.fetchall()
-
 if __name__ == '__main__':
+    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
+
+    mydb = mysql.connect(
+        host='localhost',
+        user=username,
+        passwd=password,
+        db=database,
+        port=3306
+    )
+
+    # create cursor
+    cursor = mydb.cursor()
+
+    cursor.execute('SELECT * FROM states ORDER BY id')
+
+    rows = cursor.fetchall()
     for row in rows:
         print(row)
 
-# close connections
-cursor.close()
-mydb.close()
+    # close connections
+    cursor.close()
+    mydb.close()
