@@ -14,6 +14,8 @@ Your code should not be executed when imported
 import MySQLdb as mysql
 import sys
 
+
+
 if __name__ == '__main__':
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
@@ -32,6 +34,7 @@ if __name__ == '__main__':
         SELECT *
         FROM states
         WHERE name LIKE 'N%'
+        ORDER BY states.id
     """)
 
     rows = cursor.fetchall()
