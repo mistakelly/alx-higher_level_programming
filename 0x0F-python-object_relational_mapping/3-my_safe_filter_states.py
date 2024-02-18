@@ -44,10 +44,10 @@ mydb = mysql.connect(
 # create a cursor
 cursor = mydb.cursor()
 
-command = f'SELECT * FROM states WHERE name=%s ORDER BY states.id'
+# command = f'SELECT * FROM states WHERE name=%s ORDER BY states.id'
 
 
-cursor.execute(command, (searched,))
+cursor.execute('SELECT * FROM states WHERE name LIKE BINARY %s', (searched,))
 # fetch all data
 rows = cursor.fetchall()
 
