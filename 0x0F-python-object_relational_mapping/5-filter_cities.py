@@ -14,10 +14,8 @@ The results must be displayed as they are in the example below
 Your code should not be executed when imported
 """
 
-
 import MySQLdb as mysql
 from sys import argv
-import re
 
 
 def connection(connect, username, password, database, prt, state):
@@ -43,11 +41,6 @@ def connection(connect, username, password, database, prt, state):
             "(SELECT id FROM states WHERE name = %s)"
     cursor.execute(query, (state,))
 
-    # expected Dallas, Houston, Austin
-    # got ('Dallas',)
-    # ('Houston',)
-    # ('Austin',)
-
     rows = cursor.fetchall()
     count = 0
     for row in rows:
@@ -57,14 +50,12 @@ def connection(connect, username, password, database, prt, state):
             else:
                 print(i, end=' ')
             count += 1
+    print()
     # close connections
     cursor.close()
     return mydb
 
 
-
 if __name__ == '__main__':
     mydbase = connection('localhost', argv[1], argv[2], argv[3], 3306, argv[4])
     mydbase.close()
-    print()
-
