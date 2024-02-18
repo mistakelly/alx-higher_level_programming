@@ -41,9 +41,9 @@ if __name__ == '__main__':
     )
     # create a cursor
     cursor = mydb.cursor()
+    command = "SELECT * FROM `states` WHERE name LIKE BINARY %s"
 
-    cursor.execute('SELECT * FROM states WHERE name LIKE BINARY %s',
-                   (searched,))
+    cursor.execute(command, (searched,))
     # fetch all data
     rows = cursor.fetchall()
 
