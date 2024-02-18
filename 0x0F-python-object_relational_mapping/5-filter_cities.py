@@ -17,6 +17,7 @@ Your code should not be executed when imported
 
 import MySQLdb as mysql
 from sys import argv
+import re
 
 
 def connection(connect, username, password, database, prt, state):
@@ -39,13 +40,24 @@ def connection(connect, username, password, database, prt, state):
     # create cursor
     cursor = mydb.cursor()
     query = "SELECT name FROM cities WHERE state_id =" \
-            " (SELECT id FROM states WHERE name = %s)"
+            "(SELECT id FROM states WHERE name = %s)"
     cursor.execute(query, (state,))
 
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+    # expected Dallas, Houston, Austin
+    # got ('Dallas',)
+    # ('Houston',)
+    # ('Austin',)
 
+    rows = cursor.fetchall()
+    count = 0
+    for row in rows:
+        for i in row:
+            if count < 2:
+                print(i, end=',')
+            else:
+                print(i, end='')
+            count += 1
+    print()
     # close connections
     cursor.close()
     return mydb
