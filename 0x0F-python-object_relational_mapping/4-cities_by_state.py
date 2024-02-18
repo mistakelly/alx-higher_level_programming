@@ -37,7 +37,7 @@ def connection(connect, username, password, database, prt):
 
     # create cursor
     cursor = mydb.cursor()
-    command = "SELECT id, name FROM cities"
+    command = "SELECT id, name FROM cities ORDER BY cities.id"
 
     cursor.execute(command)
 
