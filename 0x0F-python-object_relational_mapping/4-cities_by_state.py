@@ -37,9 +37,11 @@ def connection(connect, username, password, database, prt):
 
     # create cursor
     cursor = mydb.cursor()
-    # query = "SELECT id, name FROM cities ORDER BY id"
+    query = "SELECT cities.id, cities.name, states.name FROM cities" \
+            " LEFT JOIN states ON cities.state_id= states.id ORDER" \
+            " BY cities.id ASC"
 
-    cursor.execute('SELECT id, name FROM cities ORDER BY id')
+    cursor.execute(query)
 
     rows = cursor.fetchall()
     for row in rows:
