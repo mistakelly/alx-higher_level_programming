@@ -38,7 +38,7 @@ def connection(connect, username, password, database, prt, state):
     # create cursor
     cursor = mydb.cursor()
     query = "SELECT name FROM cities WHERE state_id =" \
-            "(SELECT id FROM states WHERE name=%s ORDER BY cities.id ASC)"
+            "(SELECT id FROM states WHERE name=%s) ORDER BY cities.id ASC"
     cursor.execute(query, (state,))
 
     rows = cursor.fetchall()
