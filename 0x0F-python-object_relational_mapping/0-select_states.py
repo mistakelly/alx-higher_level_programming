@@ -9,17 +9,18 @@ Results must be sorted in ascending order by states.id
 Results must be displayed as they are in the example below
 code should not be executed when imported
 """
-import MySQLdb as mysql
-import sys
-if __name__ == '__main__':
-    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
+import MySQLdb as mysql
+from sys import argv
+
+
+def connection(connect, username, password, database, prt):
     mydb = mysql.connect(
-        host='localhost',
+        host=connect,
         user=username,
         passwd=password,
         db=database,
-        port=3306
+        port=prt
     )
 
     # create cursor
@@ -34,3 +35,7 @@ if __name__ == '__main__':
     # close connections
     cursor.close()
     mydb.close()
+
+
+if __name__ == '__main__':
+    connection('localhost', argv[1], argv[2], argv[3], 3306)
