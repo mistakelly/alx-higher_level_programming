@@ -55,7 +55,7 @@ def connection(connect, username, password, database, prt, state):
             if count < 2:
                 print(i, end=', ')
             else:
-                print(i, end='')
+                print(i, end=' ')
             count += 1
     print()
     # close connections
