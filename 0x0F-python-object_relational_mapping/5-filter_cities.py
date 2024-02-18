@@ -53,7 +53,7 @@ def connection(connect, username, password, database, prt, state):
     for row in rows:
         for i in row:
             if count < 2:
-                print(i, end=',')
+                print(i, end=', ')
             else:
                 print(i, end='')
             count += 1
