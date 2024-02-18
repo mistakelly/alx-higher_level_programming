@@ -57,12 +57,14 @@ def connection(connect, username, password, database, prt, state):
             else:
                 print(i, end=' ')
             count += 1
-    print()
     # close connections
     cursor.close()
     return mydb
 
 
+
 if __name__ == '__main__':
     mydbase = connection('localhost', argv[1], argv[2], argv[3], 3306, argv[4])
     mydbase.close()
+    print()
+
