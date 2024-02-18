@@ -37,7 +37,8 @@ if __name__ == '__main__':
     # create cursor
     cursor = mydb.cursor()
 
-    cursor.execute(command, (searched,))
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'"
+                   .format(searched))
 
     rows = cursor.fetchall()
     for row in rows:
