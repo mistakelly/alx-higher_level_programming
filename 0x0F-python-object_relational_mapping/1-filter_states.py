@@ -10,33 +10,41 @@ Results must be sorted in ascending order by states.id
 Results must be displayed as they are in the example below
 Your code should not be executed when imported
 """
-# set connection
-
 import MySQLdb as mysql
-import sys
-if __name__ == '__main__':
-    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
+from sys import argv
 
+
+def connection(connect, username, password, database, prt):
+    """
+        lists all row in states table
+        connect:port,
+        username: username of the user,
+        password: password of the database,
+        database: the database to use,
+        prt: port to connect.
+    """
     mydb = mysql.connect(
-        host='localhost',
-        db=database,
+        host=connect,
         user=username,
         passwd=password,
-        port=3306
+        db=database,
+        port=prt
     )
 
-    # establish connection
+    # create cursor
     cursor = mydb.cursor()
 
-    cursor.execute("""
-        SELECT *
-        FROM states
-        WHERE name LIKE BINARY 'N%'
-    """)
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'")
 
     rows = cursor.fetchall()
     for row in rows:
         print(row)
+
     # close connections
     cursor.close()
-    mydb.close()
+    return mydb
+
+
+if __name__ == '__main__':
+    mydbase = connection('localhost', argv[1], argv[2], argv[3], 3306)
+    mydbase.close()
