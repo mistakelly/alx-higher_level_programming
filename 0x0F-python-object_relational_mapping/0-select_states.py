@@ -14,7 +14,7 @@ import MySQLdb as mysql
 from sys import argv
 
 
-def connection(connect, username, password, database, prt) -> None:
+def connection(connect, username, password, database, prt):
     """
         lists all row in states table
         connect:port,
@@ -42,8 +42,9 @@ def connection(connect, username, password, database, prt) -> None:
 
     # close connections
     cursor.close()
-    mydb.close()
+    return mydb
 
 
 if __name__ == '__main__':
-    connection('localhost', argv[1], argv[2], argv[3], 3306)
+    mydb = connection('localhost', argv[1], argv[2], argv[3], 3306)
+    mydb.close()
