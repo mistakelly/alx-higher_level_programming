@@ -14,7 +14,15 @@ import MySQLdb as mysql
 from sys import argv
 
 
-def connection(connect, username, password, database, prt):
+def connection(connect, username, password, database, prt) -> None:
+    """
+        lists all row in states table
+        connect:port,
+        username: username of the user,
+        password: password of the database,
+        database: the database to use,
+        prt: port to connect.
+    """
     mydb = mysql.connect(
         host=connect,
         user=username,
