@@ -37,9 +37,9 @@ def connection(connect, username, password, database, prt):
 
     # create cursor
     cursor = mydb.cursor()
-    query = "SELECT id, name FROM cities ORDER BY id"
+    # query = "SELECT id, name FROM cities ORDER BY id"
 
-    cursor.execute(query)
+    cursor.execute('SELECT id, name FROM cities ORDER BY id')
 
     rows = cursor.fetchall()
     for row in rows:
