@@ -44,7 +44,7 @@ mydb = mysql.connect(
 # create a cursor
 cursor = mydb.cursor()
 
-command = f'SELECT * FROM states WHERE name LIKE BINARY %s'
+command = f'SELECT * FROM states WHERE name=%s ORDER BY states.id'
 
 
 cursor.execute(command, (searched,))
