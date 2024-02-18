@@ -38,7 +38,8 @@ def connection(connect, username, password, database, prt, state):
     # create cursor
     cursor = mydb.cursor()
     query = "SELECT cities.name FROM cities INNER JOIN states" \
-            " ON states.id=cities.state_id WHERE states.name=%s"
+            " ON states.id=cities.state_id WHERE states.name=%s" \
+            " ORDER BY cities.id"
     cursor.execute(query, (state,))
 
     rows = cursor.fetchall()
