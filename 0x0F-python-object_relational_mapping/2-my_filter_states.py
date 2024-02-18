@@ -17,28 +17,32 @@ Your code should not be executed when imported
 """
 
 
-# import MySQLdb as mysql
 import MySQLdb as mysql
 from sys import argv
-if __name__ == '__main__':
-    username, password, database, searched = argv[1], argv[2], argv[3], argv[4]
 
+
+def connection(connect, username, password, database, search, prt):
+    """
+        lists all row in states table
+        connect:port,
+        username: username of the user,
+        password: password of the database,
+        database: the database to use,
+        prt: port to connect.
+    """
     mydb = mysql.connect(
-        host='localhost',
+        host=connect,
         user=username,
         passwd=password,
         db=database,
-        port=3306
+        port=prt
     )
-
-    command = f'SELECT * FROM states WHERE name LIKE BINARY' \
-              f' %s ORDER BY states.id'
 
     # create cursor
     cursor = mydb.cursor()
+    command = "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(search)
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'"
-                   .format(searched))
+    cursor.execute(command)
 
     rows = cursor.fetchall()
     for row in rows:
@@ -46,4 +50,9 @@ if __name__ == '__main__':
 
     # close connections
     cursor.close()
-    mydb.close()
+    return mydb
+
+
+if __name__ == '__main__':
+    mydbase = connection('localhost', argv[1], argv[2], argv[3], argv[4], 3306)
+    mydbase.close()
