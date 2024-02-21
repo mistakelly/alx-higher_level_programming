@@ -46,5 +46,5 @@ def connection(connect, username, password, database, prt):
 
 
 if __name__ == '__main__':
-    mydb = connection('localhost', argv[1], argv[2], argv[3], 3306)
-    mydb.close()
+    mydbase = connection('localhost', argv[1], argv[2], argv[3], 3306)
+    mydbase.close()
