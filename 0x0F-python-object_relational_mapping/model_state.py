@@ -12,11 +12,3 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128))
-
-
-engine = create_engine('mysql+mysqlconnector://{}:{}@localhost:3306/{}'
-                           .format(argv[1], argv[2], argv[3]), echo=True, pool_pre_ping=True)
-#     Base.metadata.create_all(engine)
-
-
-
