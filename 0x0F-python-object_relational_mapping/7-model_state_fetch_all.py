@@ -33,7 +33,7 @@ def list_states():
     states = session.query(State).order_by(State.id).all()
 
     for state in states:
-        print("({}: {})".format(state.id, state.name))
+        print("{}: {}".format(state.id, state.name))
     # close connection to release resources
     session.close()
 
