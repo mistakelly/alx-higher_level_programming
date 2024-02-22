@@ -10,10 +10,11 @@ The results must be displayed as they are in the example below
 Your code should not be executed when imported
 """
 
-
+from sys import argv
 from model_state import Base, State
-from sqlalchemy import (engine)
+from sqlalchemy import (create_engine)
 
-
+# create connection
 if __name__ == '__main__':
-    engine = cr
+    engine = create_engine('mysql+mysqlconnector://:{}:{}@localhost:3306/{}'
+                           .format(argv[1], argv[2], argv[3]))
