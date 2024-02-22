@@ -25,9 +25,10 @@ def list_states():
                            .format(argv[1], argv[2], argv[3]))
     # establish connection
     Session = sessionmaker(bind=engine)
-    session = Session()
 
     Base.metadata.create_all(engine)
+
+    session = Session()
 
     states = session.query(State).order_by(State.id).all()
 
