@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-"""Start link class to table in database
 """
-from sys import argv
-from sqlalchemy import create_engine, Column, String, Integer
+using sqlalchemy to connect and create a state
+table in USE hbtn_0e_6_usa;
+sqlalchemy helps us to define databases as python objects and work
+with them, so we  don't have to write raw sql codes
+"""
+from sqlalchemy import Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
