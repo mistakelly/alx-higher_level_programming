@@ -13,8 +13,17 @@ Your code should not be executed when imported
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
+
 
 # create connection
 if __name__ == '__main__':
-    engine = create_engine('mysql+mysqlconnector://:{}:{}@localhost:3306/{}'
-                           .format(argv[1], argv[2], argv[3]))
+    engine = create_engine('mysql+mysqlconnector://{}:{}@localhost:3306/{}'
+                           .format(argv[1], argv[2], argv[3]), pool_pre_ping=True, echo=True)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    states = session.query(State).all()
+
+    for state in states:
+        print(state)
