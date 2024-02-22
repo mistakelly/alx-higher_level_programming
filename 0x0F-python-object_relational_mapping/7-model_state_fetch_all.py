@@ -19,7 +19,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 # create connection
-if __name__ == '__main__':
+def list_states():
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(argv[1], argv[2], argv[3]))
     Session = sessionmaker(bind=engine)
@@ -31,3 +31,7 @@ if __name__ == '__main__':
         print("({}, {})".format(state.id, state.name))
 
     session.close()
+
+
+if __name__ == '__main__':
+    list_states()
