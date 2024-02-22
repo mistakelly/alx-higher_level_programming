@@ -5,11 +5,10 @@ table in USE hbtn_0e_6_usa;
 sqlalchemy helps us to define databases as python objects and work
 with them, so we  don't have to write raw sql codes
 """
-from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-mymetadata = MetaData()
-Base = declarative_base(metadata=mymetadata)
+Base = declarative_base()
 
 
 class State(Base):
