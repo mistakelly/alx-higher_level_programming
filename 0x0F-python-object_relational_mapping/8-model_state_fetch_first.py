@@ -20,8 +20,26 @@ Your code should not be executed when imported
 """
 from sys import argv
 from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
 
 
 def print_first_state(username, password, db):
-    pass
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(username, password, db))
+
+    session = sessionmaker(bind=engine)
+    Base.metadata.create_all(engine)
+    Session = session()
+
+    state = Session.query(State).order_by(State.id).first()
+
+    result = '1: {}'.format(state.name)
+
+    Session.close()
+    return result
+
+
+if __name__ == '__main__':
+    engine = print_first_state(argv[1], argv[2], argv[3])
+    print(engine)
