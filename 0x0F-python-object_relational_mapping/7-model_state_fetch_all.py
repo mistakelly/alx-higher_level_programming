@@ -22,6 +22,7 @@ from sqlalchemy.orm import sessionmaker
 def list_states():
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(argv[1], argv[2], argv[3]))
+    # establish connection
     Session = sessionmaker(bind=engine)
     session = Session()
 
@@ -29,7 +30,7 @@ def list_states():
 
     for state in states:
         print("({}, {})".format(state.id, state.name))
-
+    # close connection to release resources
     session.close()
 
 
