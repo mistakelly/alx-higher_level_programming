@@ -18,4 +18,10 @@ If the table states is empty, print Nothing
 followed by a new line
 Your code should not be executed when imported
 """
+from sys import argv
+from model_state import Base, State
+from sqlalchemy import (create_engine)
 
+
+def print_first_state(username, password, db):
+    pass
