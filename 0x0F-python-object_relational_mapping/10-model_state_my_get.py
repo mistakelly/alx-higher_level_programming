@@ -34,7 +34,7 @@ def print_state_obj(username, password, db, state_name):
     states = session.query(State).filter(State.name == state_name).first()
 
     if states is None:
-        result = 'Nof found'
+        result = 'Not found'
     else:
         result = states.id
 
