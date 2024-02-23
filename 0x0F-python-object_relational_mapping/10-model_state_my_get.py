@@ -23,21 +23,22 @@ from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
 
-def print_state_obj(username, password, db, state):
-    engine = create_engine('mysql+msqldb://{}:{}@localhost:3306/{}'
-                           .format(username, password, db, state))
+def print_state_obj(username, password, db, state_name):
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(username, password, db), pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
     Base.metadata.create_all(engine)
     session = Session()
 
-    states = session.query(State)
+    states = session.query(State).filter(State.name == state_name).first()
 
-
-    return states
+    if states is None:
+        result = 'Nof found'
+    else:
+        return states.id
 
 
 if __name__ == '__main__':
     state = print_state_obj(argv[1], argv[2], argv[3], argv[4])
     print(state)
-
