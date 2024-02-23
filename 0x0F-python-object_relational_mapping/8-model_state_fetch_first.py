@@ -35,12 +35,15 @@ def print_first_state(username, password, db):
 
     state = Session.query(State).order_by(State.id).first()
 
-    result = '1: {}'.format(state.name)
+    if state is None:
+        result = 'Nothing'
+    else:
+        result = '1: {}'.format(state.name)
 
     Session.close()
     return result
 
 
 if __name__ == '__main__':
-    engine = print_first_state(argv[1], argv[2], argv[3])
-    print(engine)
+    result = print_first_state(argv[1], argv[2], argv[3])
+    print(result)
