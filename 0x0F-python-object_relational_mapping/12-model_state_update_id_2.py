@@ -26,7 +26,7 @@ def print_state_obj(username, password, db):
 
     Session = sessionmaker(bind=engine)
 
-    Base.metadata.create_all(engine)
+    # Base.metadata.create_all(engine)
     session = Session()
     update_name = session.query(State).filter_by(id=2).first()
 
