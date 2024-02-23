@@ -25,8 +25,7 @@ def del_state_col(username, password, db):
     Session = sessionmaker(bind=engine)
 
     session = Session()
-    del_states = session.query(State).filter(State.name.like('%a%')).all()
-    states = session.query(State).all()
+    del_states = session.query(State).filter(State.name.like('%a%'))
 
     # loop through the list update_names and drop row
     for del_state in del_states:
