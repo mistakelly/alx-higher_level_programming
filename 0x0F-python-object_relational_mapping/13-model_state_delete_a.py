@@ -31,8 +31,6 @@ def del_state_col(username, password, db):
     # loop through the list update_names and drop row
     for del_state in del_states:
         session.delete(del_state)
-    for state in states:
-        print('{}: {}'.format(state.id, state.name))
 
     # session.add(update_name)
     session.commit()
