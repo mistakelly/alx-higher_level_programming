@@ -36,7 +36,9 @@ def print_state_obj(username, password, db, state_name):
     if states is None:
         result = 'Nof found'
     else:
-        return states.id
+        result = states.id
+
+    return result
 
 
 if __name__ == '__main__':
