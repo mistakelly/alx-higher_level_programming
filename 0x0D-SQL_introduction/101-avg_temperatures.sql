@@ -1,0 +1,7 @@
+-- QUERRY THAT SEARCHES TEMPERATURES TABLE, CALC AVERAGE,  AND ORDER BY AVG.
+
+
+SELECT city, AVG(values) as `avg_temp`
+FROM temperatures
+GROUP BY city
+ORDER BY avg_temp DESC;
