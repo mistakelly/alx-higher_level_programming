@@ -26,7 +26,6 @@ def print_state_obj(username, password, db):
 
     Session = sessionmaker(bind=engine)
 
-    # Base.metadata.create_all(engine)
     session = Session()
     update_name = session.query(State).filter_by(id=2).first()
 
@@ -43,4 +42,3 @@ def print_state_obj(username, password, db):
 
 if __name__ == '__main__':
     state = print_state_obj(argv[1], argv[2], argv[3])
-    # print(state)

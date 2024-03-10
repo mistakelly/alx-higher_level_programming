@@ -12,6 +12,7 @@ Your script should connect to a MySQL server running
 on localhost at port 3306
 Your code should not be executed when imported
 """
+
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import (create_engine)

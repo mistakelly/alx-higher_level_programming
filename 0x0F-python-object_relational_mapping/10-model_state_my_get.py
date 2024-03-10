@@ -25,7 +25,7 @@ from sqlalchemy.orm import sessionmaker
 
 def print_state_obj(username, password, db, state_name):
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(username, password, db), pool_pre_ping=True)
+                           .format(username, password, db, state_name), pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
     Base.metadata.create_all(engine)

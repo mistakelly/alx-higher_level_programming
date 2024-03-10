@@ -1,1 +1,1 @@
-this directory is for datastructures in python
+this is directory is for datastructures in python
