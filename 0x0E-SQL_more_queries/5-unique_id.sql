@@ -6,7 +6,7 @@
 -- If the table unique_id already exists, your script should not fail
 
 CREATE TABLE IF NOT EXISTS `unique_id`(
-    `INT` INT DEFAULT 1 UNIQUE,
+    `id` INT DEFAULT 1 UNIQUE,
     `name` VARCHAR(256)
 );
 
