@@ -8,6 +8,6 @@
 SELECT id, name FROM cities WHERE state_id = 
     (
         SELECT id FROM states
-        where name = 'california'
+        where name = 'California'
     )
 ORDER BY cities.id
