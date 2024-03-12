@@ -1,0 +1,5 @@
+SHOW DATABASES;
+
+USE book_shop;
+
+SELECT CURRENT_USER();
