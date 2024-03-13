@@ -6,4 +6,4 @@ CASE
     WHEN tv_show_genres.show_id  IS NULL THEN 'NULL'
     ELSE  
 END
-ORDER BY tv_shows.tiltle, tv_show_genres.genre_id;
+ORDER BY tv_shows.tiltle, tv_show_genres.genre_id ASC;
