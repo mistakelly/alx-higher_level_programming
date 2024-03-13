@@ -16,3 +16,5 @@ CREATE TABLE IF NOT EXISTS `cities`(
     `name` VARCHAR(256) NOT NULL,
     FOREIGN KEY(state_id) REFERENCES states(id)
 );
+
+DROP Table cities;
