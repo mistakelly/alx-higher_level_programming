@@ -5,10 +5,6 @@
 --You can use only one SELECT statement
 --The database name will be passed as an argument of the mysql command
 
-SELECT tv_shows.title AS `title`, tv_show_genres.genre_id from tv_shows
-INNER JOIN tv_show_genre_id ON tv_shows.id = tv_show_genres.show_id
-CASE 
-    WHEN tv_show_genres.show_id  IS NULL THEN 'NULL'
-    ELSE  
-END
-ORDER BY tv_shows.tiltle, tv_show_genres.genre_id ASC;
+SELECT tv_shows.title AS `title`, IFNULL(tv_show_genres.genre_id, 'NULL'), tv_show_genres.genre_id as `genre_id`
+FROM tv_shows JOIN tv_show_genres ON tv_shows.id =  tv_show_genres.show_id
+ORDER BY tv_shows.title ASC, tv_show_genres.genre_id ASC;
