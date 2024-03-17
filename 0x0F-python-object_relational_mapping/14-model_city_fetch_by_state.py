@@ -19,4 +19,3 @@ if __name__ == '__main__':
 
     for state_name, city_id, city_name in all_data:
         print("{}: ({}) {}".format(state_name, city_id, city_name))
-
