@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""select city and also select states (sort of join)"""
 from sys import argv
 from model_state import Base, State
 from model_city import City
