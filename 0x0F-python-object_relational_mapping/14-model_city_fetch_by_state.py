@@ -18,7 +18,8 @@ if __name__ == '__main__':
 
     session = Session()
 
-    all_data = session.query(State.name, City.id, City.name).filter(State.id == City.state_id)
+    all_data = session.query(State.name, City.id, City.name)\
+        .filter(State.id == City.state_id)
 
     for state_name, city_id, city_name in all_data:
         print("{}: ({}) {}".format(state_name, city_id, city_name))
