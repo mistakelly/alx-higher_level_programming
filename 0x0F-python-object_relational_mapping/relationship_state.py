@@ -5,8 +5,10 @@ table in USE hbtn_0e_6_usa;
 sqlalchemy helps us to define databases as python objects and work
 with them, so we  don't have to write raw sql codes
 """
+
 from sqlalchemy.orm import declarative_base, relationship
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
+
 Base = declarative_base()
 
 
