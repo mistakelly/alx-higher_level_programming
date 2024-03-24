@@ -21,7 +21,7 @@ class State(Base):
     """
 
     __tablename__ = 'states'
-    id = Column(Integer, unique=True, nullable=False, primary_key=True, autoincrement=True)
+    id = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
     cities = relationship('City', cascade='save-update, merge, delete',
                           backref='state')
