@@ -14,10 +14,8 @@ can’t be null and is a foreign key to states.id
 You must use the module SQLAlchemy
 """
 
-from model_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
-from relationship_state import State
+from relationship_state import Base
 
 
 class City(Base):
@@ -28,7 +26,7 @@ class City(Base):
     id = Column(Integer, unique=True, nullable=False,
                 primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('State.id'), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
 
 
 
