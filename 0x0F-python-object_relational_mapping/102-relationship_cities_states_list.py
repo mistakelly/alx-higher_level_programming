@@ -17,7 +17,6 @@ if __name__ == "__main__":
     session = Session(engine)
 
     all_city = session.query(City).all()
-    print(all_city)
 
     for k in all_city:
         print(f"{k.id}: {k.name} -> {k.state.name}")
