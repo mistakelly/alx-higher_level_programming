@@ -21,5 +21,12 @@ if __name__ == "__main__":
     new_state.cities.append(new_city)
 
     session.add(new_state)
-    session.commit()
+    # session.commit()
+
+    state_city = session.query(State).all()
+    print(state_city)
     session.close()
+
+
+
+

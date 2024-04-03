@@ -25,3 +25,6 @@ class State(Base):
     name = Column(String(128), nullable=False)
     cities = relationship('City', cascade='save-update, merge, delete',
                           backref='state')
+
+
+
